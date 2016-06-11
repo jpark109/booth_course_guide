@@ -1,0 +1,40 @@
+<div class="page-header">
+  <h1>
+    Enrolls
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>User</th>
+        <th>Course</th>
+        <th>Rating info</th>
+        <th>Rating interest</th>
+        <th>Rating useful</th>
+        <th>Rating learn</th>
+        <th>Rating rec</th>
+        <th>Rating hours</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @enrolls.each do |enroll| %>
+      <tr>
+        <td><%= enroll.user_id %></td>
+        <td><%= enroll.course_id %></td>
+        <td><%= enroll.rating_info %></td>
+        <td><%= enroll.rating_interest %></td>
+        <td><%= enroll.rating_useful %></td>
+        <td><%= enroll.rating_learn %></td>
+        <td><%= enroll.rating_rec %></td>
+        <td><%= enroll.rating_hours %></td>
+        <td>
+          <a href="/enrolls/<%= enroll.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_enroll/<%= enroll.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

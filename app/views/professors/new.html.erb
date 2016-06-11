@@ -1,0 +1,74 @@
+<!-- Validation failure messages -->
+<% if @professor.errors.any? %>
+  <% @professor.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Faculty</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_professor" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for professor_name -->
+      <div class="form-group">
+        <label for="name" class="control-label">
+          Name
+        </label>
+
+        <input type="text" id="name" name="name" placeholder="Last, First" class="form-control" value="<%= @professor.name %>">
+      </div>
+
+      <!-- Label and input for professor_title -->
+      <div class="form-group">
+        <label for="title" class="control-label">
+          Title
+        </label>
+
+        <input type="text" id="title" name="title" placeholder="Professor title" class="form-control" value="<%= @professor.title %>">
+      </div>
+
+      <!-- Label and input for bio -->
+      <div class="form-group">
+        <label for="bio" class="control-label">
+          Biography
+        </label>
+
+        <textarea id="bio" name="bio" placeholder="Biography" class="form-control" rows="3"><%= @professor.bio %></textarea>
+      </div>
+
+      <!-- Label and input for professor_pic -->
+      <div class="form-group">
+        <label for="image_url" class="control-label">
+          Image URL
+        </label>
+
+        <input type="text" id="image_url" name="image_url" placeholder="Professor image URL" class="form-control" value="<%= @professor.image_url%>">
+      </div>
+
+      <!-- Label and input for professor_email -->
+      <div class="form-group">
+        <label for="email" class="control-label">
+          Professor email
+        </label>
+
+        <input type="text" id="email" name="email" placeholder="Professor email" class="form-control" value="<%= @professor.email %>">
+      </div>
+
+      <br>
+      <button class="btn btn-success">
+        Create Faculty
+      </button>
+      or
+      <a href="/professors">Cancel</a>
+    </form>
+  </div>
+</div>

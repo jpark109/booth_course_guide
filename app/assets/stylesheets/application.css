@@ -1,0 +1,82 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ .primary-font-semibold {font-family: 'ProximaNova-Semibold';}
+
+ .primary-font-light {font-family: 'ProximaNova-Light';}
+
+ .primary-font-regular {font-family: 'ProximaNova-Regular';}
+
+ .primary-color-background {background-color: rgb(128, 0, 0);}
+
+ .primary-color-font {color: rgb(128, 0, 0);}
+
+ .font-size12 {font-size: 12px;}
+
+ .form-control {
+   height: 25px;
+   font-size: 12px;}
+
+ .form-group {margin-bottom: 5px;}
+
+ .btn-width60 {
+   width: 60px;}
+
+ .btn-enroll {font-size: 10px;
+   padding: 0px 3px;
+   width: 50px;
+   border-width: 1px;}
+
+ .btn-background {
+   background-color: rgb(118, 118, 118);
+   border-color: rgb(118, 118, 118);}
+
+ dt {
+   font-family: 'ProximaNova-Semibold';
+   font-size: 12px; }
+ dd {
+   font-family: 'ProximaNova-Light';
+   font-size: 12px; }
+
+ h1 { font-family: 'ProximaNovaT-Thin'; }
+ h2 { font-family: 'ProximaNova-Light'; }
+ h3 { font-family: 'ProximaNova-Semibold'; }
+ h4 { font-family: 'ProximaNova-Semibold'; }
+ h5 { font-family: 'ProximaNova-Regular'; }
+
+.background-img {
+  background: url("/gleacher.jpg") no-repeat center center;
+  background-size: cover;
+  color: white;
+  height: 500px;
+  padding-top: 150px;
+}
+
+.background-img1 {
+  background: url("/booth_nbc.jpg") no-repeat center center;
+  background-size: cover;
+  color: white;
+  height: 500px;
+  padding-top: 150px;
+}
+
+.home-header {
+	padding-left: 250px;
+  padding-top: 100px;
+}
+
+.nav-bar-heigh {
+  height: 75px;
+}

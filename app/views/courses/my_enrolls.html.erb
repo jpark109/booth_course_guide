@@ -1,0 +1,51 @@
+<div class="page-header">
+  <h3>
+    My Schedule
+  </h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr class="primary-font-regular">
+        <th>#</th>
+        <th>Title</th>
+        <th>Quarter</th>
+        <th>Year</th>
+        <th>My Rating</th>
+        <th>
+          Course Rating
+        </th>
+        <th>Actions</th>
+      </tr>
+
+      <% @enrolls.each do |enroll| %>
+      <tr class="primary-font-light">
+        <td><a href="/courses/<%= enroll.course.id %>"><%= enroll.course.number %></a></td>
+        <td><a href="/courses/<%= enroll.course.id %>"><%= enroll.course.title %></a></td>
+        <td><%= enroll.course.quarter %></td>
+        <td><%= enroll.course.year %></td>
+        <td><%= enroll.rating_info %></td>
+
+        <td>
+          <% ratings = enroll.course.enrolls.pluck(:rating_info).reject(&:nil?)
+            count = ratings.count
+          sum = ratings.sum
+
+          if count==0
+            mean = "n/a"
+          else
+            mean = sum/count
+          end %>
+          <%= mean %>
+        </td>
+
+          <td>
+            <a href="/enrolls/<%= enroll.id %>/edit"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+            &nbsp <a href="/delete_enroll/<%= enroll.id %>" rel="nofollow"><i class="fa fa-trash" aria-hidden="true"></i></a>
+          </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

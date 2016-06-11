@@ -1,0 +1,46 @@
+<div class="page-header">
+  <h3><%= @professor.name %></h3>
+  <h5><%= @professor.title %></h5>
+  <img src="<%= @professor.image_url %>" width="150">
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <dl class="dl-horizontal">
+
+      <dt>Biography</dt>
+      <dd><%= @professor.bio %></dd>
+
+      <br>
+      <dt>Professor email</dt>
+      <dd><%= @professor.email %></dd>
+
+      <br>
+      <dt>Course(s)</dt>
+        <ul class="list-group">
+          <% @professor.courses.each do |course| %>
+          <dd>
+            <a href="/courses/<%= course.id %>">
+              <%= course.title %>: <%= course.number %>-<%= course.section %> - <%= course.quarter %> <%= course.year %>
+            </a>
+          </dd>
+          <% end %>
+        <ul>
+
+
+    </dl>
+
+    <br>
+    <div class="btn-group btn-group-left">
+      <a href="/professors" class="btn btn-xs btn-primary btn-width60 btn-background">
+        <i class="fa fa-arrow-left" aria-hidden="true"></i>
+      </a>
+      <a href="/professors/<%= @professor.id %>/edit" class="btn btn-xs btn-primary btn-width60 btn-background">
+        <i class="fa fa-fw fa-edit"></i>
+      </a>
+      <a href="/delete_professor/<%= @professor.id %>" class="btn btn-xs btn-primary btn-width60 btn-background" rel="nofollow">
+        <i class="fa fa-trash" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,58 @@
+<div class="page-header">
+  <h3>Course: <%= @course.title %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <dl class="dl-horizontal">
+      <dt>Course Number</dt>
+      <dd><%= @course.number %></dd>
+
+      <dt>Section</dt>
+      <dd><%= @course.section %></dd>
+
+      <dt>Title</dt>
+      <dd><%= @course.title %></dd>
+
+      <dt>Quarter</dt>
+      <dd><%= @course.quarter %></dd>
+
+      <dt>Year</dt>
+      <dd><%= @course.year %></dd>
+
+      <dt>Day & Time</dt>
+      <dd><%= @course.daytime %></dd>
+
+      <dt>Prerequisites</dt>
+      <dd><%= @course.prereq %></dd>
+
+      <dt>Course Rating</dt>
+      <dd><%= @mean %></dd>
+
+      <dt>Professor</dt>
+      <dd>
+        <a href="/professors/<%= @course.professor_id %>">
+          <%= @course.professor.name %>
+        </a>
+      </dd>
+
+
+
+
+      </dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-left">
+      <a href="/courses" class="btn btn-xs btn-primary btn-width60 btn-background">
+        <i class="fa fa-arrow-left" aria-hidden="true"></i>
+      </a>
+      <a href="/courses/<%= @course.id %>/edit" class="btn btn-xs btn-primary btn-width60 btn-background">
+        <i class="fa fa-fw fa-edit"></i>
+      </a>
+      <a href="/delete_course/<%= @course.id %>" class="btn btn-xs btn-primary btn-width60 btn-background" rel="nofollow">
+        <i class="fa fa-trash" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+</div>

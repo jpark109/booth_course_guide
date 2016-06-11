@@ -1,0 +1,46 @@
+<div class="page-header">
+  <h3>Enroll #<%= @enroll.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <dl class="dl-horizontal">
+      <dt>User</dt>
+      <dd><%= @enroll.user_id %></dd>
+
+      <dt>Course</dt>
+      <dd><%= @enroll.course_id %></dd>
+
+      <dt>Rating info</dt>
+      <dd><%= @enroll.rating_info %></dd>
+
+      <dt>Rating interest</dt>
+      <dd><%= @enroll.rating_interest %></dd>
+
+      <dt>Rating useful</dt>
+      <dd><%= @enroll.rating_useful %></dd>
+
+      <dt>Rating learn</dt>
+      <dd><%= @enroll.rating_learn %></dd>
+
+      <dt>Rating rec</dt>
+      <dd><%= @enroll.rating_rec %></dd>
+
+      <dt>Rating hours</dt>
+      <dd><%= @enroll.rating_hours %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/enrolls" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/enrolls/<%= @enroll.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_enroll/<%= @enroll.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

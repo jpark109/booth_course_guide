@@ -1,0 +1,89 @@
+<!-- Validation failure messages -->
+<% if @enroll.errors.any? %>
+  <% @enroll.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Ratings for <%= @enroll.course.title %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_enroll/<%= @enroll.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for user_id -->
+        <input type="hidden" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @enroll.user_id %>">
+
+      <!-- Label and input for course_id -->
+        <input type="hidden" id="course_id" name="course_id" placeholder="Course" class="form-control" value="<%= @enroll.course_id %>">
+
+      <!-- Label and input for rating_info -->
+      <div class="form-group">
+        <label for="rating_info" class="control-label">
+          Rating info
+        </label>
+
+        <input type="text" id="rating_info" name="rating_info" placeholder="Rating info" class="form-control" value="<%= @enroll.rating_info %>">
+      </div>
+
+      <!-- Label and input for rating_interest -->
+      <div class="form-group">
+        <label for="rating_interest" class="control-label">
+          Rating interest
+        </label>
+
+        <input type="text" id="rating_interest" name="rating_interest" placeholder="Rating interest" class="form-control" value="<%= @enroll.rating_interest %>">
+      </div>
+
+      <!-- Label and input for rating_useful -->
+      <div class="form-group">
+        <label for="rating_useful" class="control-label">
+          Rating useful
+        </label>
+
+        <input type="text" id="rating_useful" name="rating_useful" placeholder="Rating useful" class="form-control" value="<%= @enroll.rating_useful %>">
+      </div>
+
+      <!-- Label and input for rating_learn -->
+      <div class="form-group">
+        <label for="rating_learn" class="control-label">
+          Rating learn
+        </label>
+
+        <input type="text" id="rating_learn" name="rating_learn" placeholder="Rating learn" class="form-control" value="<%= @enroll.rating_learn %>">
+      </div>
+
+      <!-- Label and input for rating_rec -->
+      <div class="form-group">
+        <label for="rating_rec" class="control-label">
+          Rating rec
+        </label>
+
+        <input type="text" id="rating_rec" name="rating_rec" placeholder="Rating rec" class="form-control" value="<%= @enroll.rating_rec %>">
+      </div>
+
+      <!-- Label and input for rating_hours -->
+      <div class="form-group">
+        <label for="rating_hours" class="control-label">
+          Rating hours
+        </label>
+
+        <input type="text" id="rating_hours" name="rating_hours" placeholder="Rating hours" class="form-control" value="<%= @enroll.rating_hours %>">
+      </div>
+
+      <br>
+      <button class="btn btn-warning">
+        Update Rating
+      </button>
+      or
+      <a href="/enrolls/<%= @enroll.id %>">Cancel</a>
+    </form>
+  </div>
+</div>
